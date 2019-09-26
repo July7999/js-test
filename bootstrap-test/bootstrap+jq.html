@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>index</title>
+    <style media="screen">
+      .row{
+        padding-top: 15px;
+        padding-left: 30px;
+        display: none;
+      }
+    </style>
+    <link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+      <div class="container">
+        <h1 class="page-header">这是我的标签式导航栏</h1>
+ 
+          <ul class="nav nav-pills">
+             <li class="active">
+                <a href="">Linux</a>
+             </li>
+ 
+             <li class="">
+                <a href="">JAVA</a>
+             </li>
+ 
+             <li class="">
+                <a href="">JS</a>
+             </li>
+          </ul>
+      <div class="row">
+         <p>LINUX真是太原始了</p>
+      </div>
+ 
+      <div class="row">
+         <p>JAVA是个好东西</p>
+      </div>
+ 
+      <div class="row" >
+         <p>JS让人头秃顶</p>
+      </div>
+ 
+      </div>
+ 
+  </body>
+  <script>
+  $('li').mouseenter(function(){
+      $(this).addClass('active');
+      $('li').not($(this)).removeClass('active');
+ 
+      idx=$(this).index('li');
+      $('.row').eq(idx).show(500);
+      $('.row').not($('.row').eq(idx)).hide(500);
+  });
+  $('.row').eq(0).show(500);        //实现鼠标移动到哪里，那里显示；
+  </script>
+</html>
